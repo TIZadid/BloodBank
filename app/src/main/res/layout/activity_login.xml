@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/crime"
+            android:fontFamily="@font/dopestyle"
             android:text="Pocket Blood Bank"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -67,11 +67,11 @@
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
                 android:background="@android:color/black"
-                android:fontFamily="@font/crime"
+                android:fontFamily="@font/airstrikelaser"
                 android:padding="2dp"
                 android:text="Register"
                 android:textColor="#c30c0c"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/BtnLogin"
@@ -80,11 +80,11 @@
                 android:layout_marginLeft="1dp"
                 android:layout_weight="1"
                 android:background="@android:color/black"
-                android:fontFamily="@font/crime"
+                android:fontFamily="@font/airstrikelaser"
                 android:padding="2dp"
                 android:text="Login"
                 android:textColor="#c30c0c"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
 
         </LinearLayout>
@@ -94,12 +94,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="1"
             android:fontFamily="@font/airstrikelaser"
             android:text="Forgot Password? "
             android:textAlignment="textEnd"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="25sp"
             tools:layout_editor_absoluteX="77dp"
             tools:layout_editor_absoluteY="326dp" />
     </LinearLayout>
