@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c30c0c"
     android:clipToPadding="false"
     android:fillViewport="false"
     android:foregroundGravity="center_vertical"
@@ -14,85 +15,64 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#03382c"
         android:orientation="vertical"
         android:padding="5dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/dayslater"
-            android:text="FOOTBALL UNDERGROUND"
+            android:fontFamily="@font/Firstaid"
+            android:padding="5dp"
+            android:text="Pocket Blood Bank"
             android:textAlignment="center"
             android:textAllCaps="true"
+
             android:textColor="@android:color/background_light"
+            android:textSize="55sp"
+            android:textStyle="bold" />
 
-            android:textSize="55sp" />
-
-        <LinearLayout
+        <Button
+            android:id="@+id/profileButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="10dp"
+            android:layout_margin="2dp"
+            android:layout_marginRight="5dp"
+
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:background="@android:color/white"
+            android:fontFamily="@font/airstrikelaser"
+            android:padding="5dp"
+            android:text="Profile"
+            android:textColor="#c30c0c"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/profileButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-
-                android:text="Profile"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/TeamButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/airstrikelaser"
-                android:text="My Team"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/TeamButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_margin="2dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:background="@android:color/white"
+            android:fontFamily="@font/airstrikelaser"
+            android:padding="5dp"
+            android:text="Blood search"
+            android:textColor="#c30c0c"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/EventHostButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/airstrikelaser"
-                android:text="Event Host Menu"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/EventButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/airstrikelaser"
-                android:text="Event Feed"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/EventHostButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:fontFamily="@font/airstrikelaser"
+            android:padding="5dp"
+            android:text="Donate"
+            android:textColor="#c30c0c"
+            android:textSize="30sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

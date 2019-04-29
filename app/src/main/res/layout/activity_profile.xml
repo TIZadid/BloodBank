@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/black"
+        android:background="#c30c0c"
         android:orientation="vertical"
         android:padding="10dp"
         android:weightSum="10"
@@ -29,32 +29,20 @@
             app:civ_border_color="#000000"
             app:civ_border_width="3dp" />
 
-        <ImageButton
-            android:id="@+id/editProfilepicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
-            android:background="#000000"
-            android:onClick="toEditProfilePicture"
-            android:text="Edit profile picture"
-            android:visibility="invisible"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
-
         <TextView
             android:id="@+id/name_value"
             android:layout_width="match_parent"
 
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/dopestyle"
+            android:fontFamily="@font/desyrel"
             android:gravity="bottom"
+            android:padding="2dp"
             android:text="abc"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/white"
             android:textSize="45sp" />
-
 
 
         <LinearLayout
@@ -67,18 +55,19 @@
                 android:id="@+id/editUserPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
-                android:fontFamily="@font/airstrikelaser"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
                 android:text="Email : "
-                android:textColor="@android:color/background_dark"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/email_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
         </LinearLayout>
 
@@ -95,10 +84,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:background="@android:color/darker_gray"
-                android:fontFamily="@font/airstrikelaser"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
                 android:text="Phone : "
-                android:textColor="@android:color/background_dark"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
             <TextView
@@ -106,8 +95,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/editUserPass"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -123,27 +113,21 @@
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
-                android:fontFamily="@font/airstrikelaser"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
                 android:text="Location : "
-                android:textColor="@android:color/background_dark"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/location_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:layout_weight="0"
-            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,26 +140,21 @@
                 android:id="@+id/batch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
-                android:fontFamily="@font/airstrikelaser"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
                 android:text="Blood Group :"
-                android:textColor="@android:color/background_dark"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/blood_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
+                android:textColor="@android:color/white"
                 android:textSize="25dp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,31 +162,26 @@
             android:layout_margin="2dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/bio"
+            <Switch
+                android:id="@+id/switch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/darker_gray"
-                android:fontFamily="@font/airstrikelaser"
+                android:layout_weight="1"
+                android:fontFamily="@font/desyrel"
+                android:padding="2dp"
                 android:text="Availability"
-                android:textColor="@android:color/background_dark"
-                android:textSize="25dp" />
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/Available_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/airstrikelaser"
-                android:textColor="@android:color/background_light"
-                android:textSize="25dp" />
         </LinearLayout>
 
         <ImageButton
             android:id="@+id/Editprofile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:background="@android:color/black"
+            android:background="#c30c0c"
             android:onClick="gotoQuestions"
             android:src="@android:drawable/ic_menu_edit"
             android:text="Question "
