@@ -51,9 +51,9 @@ public class Profile extends Activity {
         bloodgrp = findViewById(R.id.blood_value);
         phoneNumber_value = findViewById(R.id.phone_value);
         location_value = findViewById(R.id.location_value);
-        available = findViewById(R.id.Available_value);
+       // available = findViewById(R.id.Available_value);
         profilePicture = findViewById(R.id.singleUser_profile_image);
-        edit_profilePhoto_button = findViewById(R.id.editProfilepicture);
+
         edit_profile = findViewById(R.id.Editprofile);
 
         showSingleUserAuth = FirebaseAuth.getInstance();
@@ -74,15 +74,13 @@ public class Profile extends Activity {
                 bloodgrp.setText(user.getBloodGrp());
                 phoneNumber_value.setText(user.getPhoneNumber());
                 location_value.setText(user.getLocation());
-                available.setText(user.getAvailability());
+//                available.setText(user.getAvailability());
                 System.out.println("@@@@@@@@@" + user.getDpURL());
                 Glide.with(Profile.this)
                         .load(user.getDpURL())
                         .into(profilePicture);
 
-                if(userEmail.equals(user.getEmail())){
-                    edit_profilePhoto_button.setVisibility(View.VISIBLE);
-                }
+
             }
 
             @Override
@@ -98,12 +96,7 @@ public class Profile extends Activity {
             }
         });
 
-        edit_profilePhoto_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toEditProfilePicture();
-            }
-        });
+
 
     }
 

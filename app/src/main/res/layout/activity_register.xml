@@ -44,7 +44,7 @@
                 android:gravity="center_vertical"
                 android:text="Enter Name:"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -55,7 +55,8 @@
                 android:ems="10"
                 android:fontFamily="@font/desyrel"
                 android:inputType="textPersonName"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,7 +73,7 @@
 
                 android:text="Enter Email Id:"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -82,7 +83,8 @@
                 android:ems="10"
                 android:fontFamily="@font/desyrel"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,7 +100,7 @@
                 android:gravity="center_vertical"
                 android:text="Enter Password:"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -108,7 +110,8 @@
                 android:ems="10"
                 android:fontFamily="@font/desyrel"
                 android:inputType="textPassword"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,7 +128,7 @@
 
                 android:text="Contact Number:"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -136,7 +139,8 @@
                 android:fontFamily="@font/desyrel"
                 android:hint="+8801XXXXXXXXX"
                 android:inputType="phone"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -153,7 +157,7 @@
 
                 android:text="Location:"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -162,9 +166,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:fontFamily="@font/desyrel"
-                android:hint="The area you usually play at"
                 android:inputType="text"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -181,58 +185,30 @@
                 android:gravity="center_vertical"
                 android:text="Blood Group :"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/BloodgrpEditText"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:fontFamily="@font/desyrel"
-                android:inputType="textPersonName"
-                android:textColor="@android:color/white" />
+                android:layout_weight="1" />
+
         </LinearLayout>
 
-        <LinearLayout
+
+        <Switch
+            android:id="@+id/switch3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textviewAvailability"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/desyrel"
-                android:gravity="center_vertical"
-
-                android:text="Availability:"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/AvailabilityEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:ems="10"
-                android:fontFamily="@font/desyrel"
-                android:inputType="number"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+            android:layout_weight="1"
+            android:fontFamily="@font/desyrel"
+            android:text="Availabiliy: "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"

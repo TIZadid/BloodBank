@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/Firstaid"
+            android:fontFamily="@font/firstaid"
             android:padding="5dp"
             android:text="Pocket Blood Bank"
             android:textAlignment="center"

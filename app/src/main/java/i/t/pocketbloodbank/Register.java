@@ -61,8 +61,8 @@ public class Register extends Activity {
 
         password = findViewById(R.id.PasswordEditText);
         fullname = findViewById(R.id.PlayerNameEditText);
-        Bloodgrp = findViewById(R.id.BloodgrpEditText);
-        Availability = findViewById(R.id.AvailabilityEditText);
+     //   Bloodgrp = findViewById(R.id.BloodgrpEditText);
+    //    Availability = findViewById(R.id.AvailabilityEditText);
         Location = findViewById(R.id.PlayerLocationEditText);
         email = findViewById(R.id.PlayerEmailEditText);
 

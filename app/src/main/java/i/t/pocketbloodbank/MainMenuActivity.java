@@ -26,7 +26,7 @@ public class MainMenuActivity extends Activity {
 
         Searchdonor = findViewById(R.id.EventHostButton);
         Donorprofile = findViewById(R.id.profileButton);
-        Requests = findViewById(R.id.EventButton);
+      //  Requests = findViewById(R.id.EventButton);
 
         Searchdonor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +41,6 @@ public class MainMenuActivity extends Activity {
             }
         });
 
-        Requests.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,Request.class));
-            }
-        });
 
     }
 

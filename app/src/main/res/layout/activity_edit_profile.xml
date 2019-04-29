@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#c30c0c"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+            android:src="@drawable/camera" />
 
         <EditText
             android:id="@+id/editUserName"
@@ -115,7 +115,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="25dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editbloodval"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,6 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/desyrel"
+            android:layout_marginTop="10dp"
             android:text="Availability"
             android:textColor="@android:color/white"
             android:textSize="25sp" />

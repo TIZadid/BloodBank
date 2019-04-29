@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -43,7 +44,7 @@ public class EditProfile extends Activity {
     EditText editUserPhoneNumber;
     EditText editUserLocation;
     Button doneEditButton;
-    Button selectImage;
+    ImageButton selectImage;
     ImageView editProfilePicture;
 
     String dpURL;
@@ -72,7 +73,6 @@ public class EditProfile extends Activity {
         editUserName = findViewById(R.id.editUserName);
         editUserPhoneNumber = findViewById(R.id.editUserPhone);
         editUserLocation = findViewById(R.id.editUserLocation);
-        editUserAvailabilty = findViewById(R.id.editavailability);
         doneEditButton = findViewById(R.id.editUserDone);
         selectImage = findViewById(R.id.editUserSelectButton);
         editProfilePicture = findViewById(R.id.editUserProfileImage);
@@ -91,8 +91,8 @@ public class EditProfile extends Activity {
                 editUserName.setText(user.getName());
                 editUserPhoneNumber.setText(user.getPhoneNumber());
                 editUserLocation.setText(user.getLocation());
-                editUserBloodgrp.setText(user.getBloodGrp());
-                editUserAvailabilty.setText(user.getAvailability());
+             //   editUserBloodgrp.setText(user.getBloodGrp());
+             //   editUserAvailabilty.setText(user.getAvailability());
                 dpURL = user.getDpURL();
 
                 System.out.println("$$$$$$$" + user.getDpURL());
