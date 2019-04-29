@@ -44,7 +44,7 @@ public class MainMenuActivity extends Activity {
 
     }
 
-    /*@Override
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main_menu, menu);
@@ -61,8 +61,8 @@ public class MainMenuActivity extends Activity {
     }
     private void logoutuser(){
         currentlyLoggedIn.signOut();
-        Intent intent = new Intent(MainMenuActivity.this,AuthActivity.class);
+        Intent intent = new Intent(MainMenuActivity.this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-    }*/
+    }
 }
