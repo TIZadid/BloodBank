@@ -1,18 +1,13 @@
 package i.t.pocketbloodbank;
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -32,10 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Edituserprofile extends Activity {
+public class EditProfile extends Activity {
 
     String userPath;
     private final static int PICK_IMAGE_NUM = 107;
@@ -182,7 +174,7 @@ public class Edituserprofile extends Activity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             //addteam.setValue(changedUser.getTeam());
-                                            Toast.makeText(Edituserprofile.this,"Update Done",Toast.LENGTH_LONG).show();
+                                            Toast.makeText(EditProfile.this,"Update Done",Toast.LENGTH_LONG).show();
                                             finish();
                                         }
                                     });
@@ -196,13 +188,13 @@ public class Edituserprofile extends Activity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             // System.out.println("Picture Hoynai");
-                            Toast.makeText(Edituserprofile.this,"Failed",Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditProfile.this,"Failed",Toast.LENGTH_LONG).show();
                             doneEditButton.setVisibility(View.VISIBLE);
                             myRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     //addteam.setValue(changedUser.getTeam());
-                                    Toast.makeText(Edituserprofile.this,"Update Done",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(EditProfile.this,"Update Done",Toast.LENGTH_LONG).show();
                                     finish();
                                 }
                             });
@@ -216,7 +208,7 @@ public class Edituserprofile extends Activity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     //addteam.setValue(changedUser.getTeam());
-                    Toast.makeText(Edituserprofile.this,"Update Done",Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditProfile.this,"Update Done",Toast.LENGTH_LONG).show();
                     finish();
                 }
             });
