@@ -115,7 +115,7 @@ public class loginActivity extends Activity {
                             final FirebaseUser currentUser = mAuth.getCurrentUser();
                             if(currentUser.isEmailVerified()){
 
-                                Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
+                               Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.putExtra("current", currentUser.getEmail());
                                 startActivity(intent);
@@ -143,10 +143,10 @@ public class loginActivity extends Activity {
 
             if(currentUser.isEmailVerified()){
 
-                Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
+                /*Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("current",currentUser.getEmail());
-                startActivity(intent);
+                startActivity(intent);*/
 
 
             }else{

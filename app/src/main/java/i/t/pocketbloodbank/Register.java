@@ -48,7 +48,7 @@ public class Register extends Activity {
     TextView textBloodgrp, textAvailability;
     TextView textlocation;
 
-    private DatabaseReference databaseReference,Teamref,addteam;
+    private DatabaseReference databaseReference,profileref,addteam;
     private FirebaseAuth userAuthentication;
 
     @Override
@@ -56,6 +56,7 @@ public class Register extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        profileref = FirebaseDatabase.getInstance().getReference("profile");
         userAuthentication = FirebaseAuth.getInstance();
 
         password = findViewById(R.id.PasswordEditText);
@@ -129,6 +130,7 @@ public class Register extends Activity {
                                 //com.example.plabon.myapplication.User user =
                                 String suserkey = sLocation + "&" + bloodgroup;
                                 databaseReference.child(suserkey).child(sphoneNumber).setValue(user);
+                                profileref.child(semail.replace('.','&')).setValue(user);
                                 FirebaseUser hmmttuser = userAuthentication.getCurrentUser();
                                 hmmttuser.sendEmailVerification();
 

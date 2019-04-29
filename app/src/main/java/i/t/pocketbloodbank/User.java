@@ -9,6 +9,8 @@ public class User {
     private String availability;
     private String dpURL;
 
+    public User(){}
+
     public User(String email, String name, String phoneNumber, String location, String bloodGrp, String availability,String dpURL) {
         this.email = email;
         this.name = name;

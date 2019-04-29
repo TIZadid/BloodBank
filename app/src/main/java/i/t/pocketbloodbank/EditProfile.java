@@ -62,7 +62,7 @@ public class EditProfile extends Activity {
         showSingleUserAuth = FirebaseAuth.getInstance();
         currentuser = showSingleUserAuth.getCurrentUser();
         Useremail = currentuser.getEmail();
-        editUserDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
+        editUserDatabaseRef = FirebaseDatabase.getInstance().getReference("profile");
         myRef = editUserDatabaseRef.child(Useremail.replace('.','&'));
         editUserStorageReference = FirebaseStorage.getInstance().getReference("profilepictures");
         Teamref = FirebaseDatabase.getInstance().getReference("Teams");

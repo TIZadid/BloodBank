@@ -1,5 +1,6 @@
 package i.t.pocketbloodbank;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -20,7 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Profile extends AppCompatActivity {
+public class Profile extends Activity {
 
     private FirebaseUser currentUser;
     private FirebaseAuth showSingleUserAuth;
@@ -60,7 +61,7 @@ public class Profile extends AppCompatActivity {
         userEmail = currentUser.getEmail();
         //nowUser = getIntent().getStringExtra("showUser");
         System.out.println("users/"+userEmail.replace('.','&'));
-        showSingleUserDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
+        showSingleUserDatabaseRef = FirebaseDatabase.getInstance().getReference("profile");
         myref = showSingleUserDatabaseRef.child(userEmail.replace('.','&'));
         System.out.println();
         myref.addValueEventListener(new ValueEventListener() {
