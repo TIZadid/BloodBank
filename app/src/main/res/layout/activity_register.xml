@@ -146,6 +146,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -160,15 +161,12 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/PlayerLocationEditText"
+            <Spinner
+                android:id="@+id/spinner2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:fontFamily="@font/desyrel"
-                android:inputType="text"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout

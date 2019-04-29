@@ -72,7 +72,7 @@ public class EditProfile extends Activity {
 
         editUserName = findViewById(R.id.editUserName);
         editUserPhoneNumber = findViewById(R.id.editUserPhone);
-        editUserLocation = findViewById(R.id.editUserLocation);
+        //editUserLocation = findViewById(R.id.editUserLocation);
         doneEditButton = findViewById(R.id.editUserDone);
         selectImage = findViewById(R.id.editUserSelectButton);
         editProfilePicture = findViewById(R.id.editUserProfileImage);
