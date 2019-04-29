@@ -8,58 +8,49 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.fasterxml.jackson.databind.deser.std.FromStringDeserializer;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainMenuActivity extends Activity {
 
-    Button EventHostMenu;
-    Button Playerprofile;
-    Button Teamhostmenu;
-    Button EventFeed;
+    Button Searchdonor;
+    Button Donorprofile;
+    Button Requests;
 
     FirebaseAuth currentlyLoggedIn = FirebaseAuth.getInstance();
 
-    //@Override
-    /*protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        EventHostMenu = findViewById(R.id.EventHostButton);
-        Playerprofile = findViewById(R.id.profileButton);
-        Teamhostmenu = findViewById(R.id.TeamButton);
-        EventFeed = findViewById(R.id.EventButton);
+        Searchdonor = findViewById(R.id.EventHostButton);
+        Donorprofile = findViewById(R.id.profileButton);
+        Requests = findViewById(R.id.EventButton);
 
-        EventHostMenu.setOnClickListener(new View.OnClickListener() {
+        Searchdonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,Frontpage.class));
+                startActivity(new Intent(MainMenuActivity.this,SearchDonor.class));
             }
         });
-        Playerprofile.setOnClickListener(new View.OnClickListener() {
+        Donorprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,Showuser.class));
+                startActivity(new Intent(MainMenuActivity.this,Profile.class));
             }
         });
-        Teamhostmenu.setOnClickListener(new View.OnClickListener() {
+
+        Requests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,ShowTeam.class));
-            }
-        });
-        EventFeed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,EventFeed.class));
+                startActivity(new Intent(MainMenuActivity.this,Request.class));
             }
         });
 
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main_menu, menu);
