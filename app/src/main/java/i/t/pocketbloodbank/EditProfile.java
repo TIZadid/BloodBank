@@ -90,7 +90,7 @@ public class EditProfile extends Activity {
 
                 editUserName.setText(user.getName());
                 editUserPhoneNumber.setText(user.getPhoneNumber());
-                editUserLocation.setText(user.getLocation());
+              //  editUserLocation.setText(user.getLocation());
              //   editUserBloodgrp.setText(user.getBloodGrp());
              //   editUserAvailabilty.setText(user.getAvailability());
                 dpURL = user.getDpURL();
