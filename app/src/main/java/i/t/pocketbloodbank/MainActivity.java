@@ -18,7 +18,7 @@ Button continueButton;
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,loginActivity.class));
+                startActivity(new Intent(MainActivity.this, loginActivity.class));
             }
         });
 

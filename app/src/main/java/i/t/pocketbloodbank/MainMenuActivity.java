@@ -1,8 +1,8 @@
 package i.t.pocketbloodbank;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,13 +31,13 @@ public class MainMenuActivity extends Activity {
         Searchdonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,SearchDonor.class));
+                startActivity(new Intent(MainMenuActivity.this, SearchDonor.class));
             }
         });
         Donorprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,Profile.class));
+                startActivity(new Intent(MainMenuActivity.this, Profile.class));
             }
         });
 
@@ -61,7 +61,7 @@ public class MainMenuActivity extends Activity {
     }
     private void logoutuser(){
         currentlyLoggedIn.signOut();
-        Intent intent = new Intent(MainMenuActivity.this,MainActivity.class);
+        Intent intent = new Intent(MainMenuActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

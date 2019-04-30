@@ -1,10 +1,8 @@
 package i.t.pocketbloodbank;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -101,7 +98,7 @@ public class Profile extends Activity {
     }
 
     public void toEditProfilePicture(){
-        Intent intent = new Intent(this,EditProfile.class);
+        Intent intent = new Intent(this, EditProfile.class);
         //  intent.putExtra("showUser","users/"+nowUser.replace('.','&'));
         startActivity(intent);
     }

@@ -5,10 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -28,6 +31,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EditProfile extends Activity {
 
     String userPath;
@@ -46,10 +52,12 @@ public class EditProfile extends Activity {
     Button doneEditButton;
     ImageButton selectImage;
     ImageView editProfilePicture;
+    Switch simpleSwitch;
 
     String dpURL;
     Uri imageURI;
 
+    Spinner locationspinner;
     User user;
     String Useremail;
 
@@ -66,16 +74,39 @@ public class EditProfile extends Activity {
         editUserDatabaseRef = FirebaseDatabase.getInstance().getReference("profile");
         myRef = editUserDatabaseRef.child(Useremail.replace('.','&'));
         editUserStorageReference = FirebaseStorage.getInstance().getReference("profilepictures");
-        Teamref = FirebaseDatabase.getInstance().getReference("Teams");
+        Teamref = FirebaseDatabase.getInstance().getReference("City");
         addteam = FirebaseDatabase.getInstance().getReference("user_team").child(Useremail.replace('.','&')).child("teamname");
 
-
+        locationspinner = findViewById(R.id.locationspinner);
         editUserName = findViewById(R.id.editUserName);
         editUserPhoneNumber = findViewById(R.id.editUserPhone);
+        simpleSwitch = findViewById(R.id.switch2);
         //editUserLocation = findViewById(R.id.editUserLocation);
         doneEditButton = findViewById(R.id.editUserDone);
         selectImage = findViewById(R.id.editUserSelectButton);
         editProfilePicture = findViewById(R.id.editUserProfileImage);
+
+        Teamref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                final List<String> teams = new ArrayList<String>();
+                for (DataSnapshot TeamSnapshot: dataSnapshot.getChildren()) {
+                    String teamName = TeamSnapshot.child("name").getValue(String.class);
+
+                    teams.add(teamName);
+
+                }
+                ArrayAdapter<String> teamsAdapter = new ArrayAdapter<String>(EditProfile.this, R.layout.myspinner, teams);
+                teamsAdapter.setDropDownViewResource(R.layout.myspinner);
+                locationspinner.setAdapter(teamsAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -147,14 +178,22 @@ public class EditProfile extends Activity {
     public void goEditProfile(){
 
         final User changedUser = user;
+        String available;
+        Boolean switchState = simpleSwitch.isChecked();
+        if(!switchState) available = "on";
+        else available = "off";
 
 
         changedUser.setName(editUserName.getText().toString().trim());
-        changedUser.setLocation(editUserLocation.getText().toString().trim());
-        changedUser.setBloodGrp(editUserBloodgrp.getText().toString().trim());
+        if(locationspinner.getSelectedItem().toString().equals("none")) changedUser.setLocation("");
+        else changedUser.setLocation(locationspinner.getSelectedItem().toString());
+        //changedUser.setBloodGrp(editUserBloodgrp.getText().toString().trim());
         changedUser.setPhoneNumber(editUserPhoneNumber.getText().toString().trim());
         changedUser.setDpURL(dpURL);
-        changedUser.setAvailability(editUserAvailabilty.getText().toString().trim());
+        changedUser.setAvailability(available);
+
+
+
 
         if(imageURI != null){
             doneEditButton.setVisibility(View.GONE);

@@ -44,7 +44,7 @@ public class ResetpasswordActivity extends Activity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(ResetpasswordActivity.this,"Done. Check your Email.",Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(ResetpasswordActivity.this,loginActivity.class);
+                                Intent intent = new Intent(ResetpasswordActivity.this, loginActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                             }else{

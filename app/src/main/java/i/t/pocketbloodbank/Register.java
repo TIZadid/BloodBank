@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,9 +48,12 @@ public class Register extends Activity {
     RadioButton visibilty,invisibility;
     TextView textBloodgrp, textAvailability;
     TextView textlocation;
+    Switch simpleSwitch;
 
-    private DatabaseReference databaseReference,profileref,addteam;
+    private DatabaseReference databaseReference,profileref,addteam,locationref,bloodref;
     private FirebaseAuth userAuthentication;
+
+    Spinner locationspinner,bloodspinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,62 @@ public class Register extends Activity {
         setContentView(R.layout.activity_register);
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
         profileref = FirebaseDatabase.getInstance().getReference("profile");
+        locationref = FirebaseDatabase.getInstance().getReference("City");
+        bloodref = FirebaseDatabase.getInstance().getReference("Blood");
+
         userAuthentication = FirebaseAuth.getInstance();
+
+        simpleSwitch = (Switch) findViewById(R.id.switch3);
+        locationspinner = findViewById(R.id.spinner2);
+        bloodspinner =findViewById(R.id.spinner);
+
+        locationref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                final List<String> teams = new ArrayList<String>();
+                for (DataSnapshot TeamSnapshot: dataSnapshot.getChildren()) {
+                    String teamName = TeamSnapshot.child("name").getValue(String.class);
+
+                    teams.add(teamName);
+
+                }
+                ArrayAdapter<String> teamsAdapter = new ArrayAdapter<String>(Register.this, R.layout.myspinner, teams);
+                teamsAdapter.setDropDownViewResource(R.layout.myspinner);
+                locationspinner.setAdapter(teamsAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        bloodref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                final List<String> teams = new ArrayList<String>();
+                for (DataSnapshot TeamSnapshot: dataSnapshot.getChildren()) {
+                    String teamName = TeamSnapshot.child("group").getValue(String.class);
+
+                    teams.add(teamName);
+
+                }
+                ArrayAdapter<String> teamsAdapter = new ArrayAdapter<String>(Register.this, R.layout.myspinner, teams);
+                teamsAdapter.setDropDownViewResource(R.layout.myspinner);
+                bloodspinner.setAdapter(teamsAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+// check current state of a Switch (true or false).
+
 
         password = findViewById(R.id.PasswordEditText);
         fullname = findViewById(R.id.PlayerNameEditText);
@@ -80,7 +139,7 @@ public class Register extends Activity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Register.this,loginActivity.class));
+                startActivity(new Intent(Register.this, loginActivity.class));
             }
         });
     }
@@ -91,13 +150,23 @@ public class Register extends Activity {
 
         final String spassword = password.getText().toString().trim();
         final String sfullname = fullname.getText().toString().trim();
-        final String bloodgroup = Bloodgrp.getText().toString().trim() ;
-        final String available = Availability.getText().toString().trim() ;
+        final String bloodgroup ;
+        final String available  ;
         final String semail = email.getText().toString().trim();
-        final String sLocation = Location.getText().toString().trim() ;
+        final String sLocation;
 
+
+        if(bloodspinner.getSelectedItem().toString().equals("none"))bloodgroup = "";
+        else bloodgroup = bloodspinner.getSelectedItem().toString();
+        if(locationspinner.getSelectedItem().toString().equals("none")) sLocation="";
+        else sLocation = locationspinner.getSelectedItem().toString();
 
         final String sphoneNumber;
+
+        Boolean switchState = simpleSwitch.isChecked();
+
+        if(switchState) available = "on";
+        else available = "off";
 
         if(TextUtils.isEmpty(phoneNumber.getText().toString().trim())) sphoneNumber = "null";
         else sphoneNumber = phoneNumber.getText().toString().trim();
@@ -117,7 +186,7 @@ public class Register extends Activity {
         }
 
 
-        if(TextUtils.isEmpty(spassword) || TextUtils.isEmpty(sfullname) || TextUtils.isEmpty(bloodgroup) || TextUtils.isEmpty(available) || TextUtils.isEmpty(semail)){
+        if(TextUtils.isEmpty(bloodgroup) || TextUtils.isEmpty(spassword) || TextUtils.isEmpty(sfullname) || TextUtils.isEmpty(bloodgroup) || TextUtils.isEmpty(available) || TextUtils.isEmpty(semail)){
             Toast.makeText(this, "Please fill out all the sections",Toast.LENGTH_LONG).show();
         }else{
             System.out.println("@@@@@@@@@@@" + semail + " " + spassword);
@@ -141,8 +210,8 @@ public class Register extends Activity {
                                 password.setText("");
                                 phoneNumber.setText("");
                                 fullname.setText("");
-                                Bloodgrp.setText("");
-                                Availability.setText("");
+                                //Bloodgrp.setText("");
+                                //Availability.setText("");
 
                                 Intent intent = new Intent(Register.this, loginActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

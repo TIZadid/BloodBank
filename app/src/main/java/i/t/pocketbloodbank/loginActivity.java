@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -64,7 +61,7 @@ public class loginActivity extends Activity {
         btnForgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(loginActivity.this,ResetpasswordActivity.class );
+                Intent intent = new Intent(loginActivity.this, ResetpasswordActivity.class );
                 startActivity(intent);
             }
         });
@@ -115,7 +112,7 @@ public class loginActivity extends Activity {
                             final FirebaseUser currentUser = mAuth.getCurrentUser();
                             if(currentUser.isEmailVerified()){
 
-                               Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
+                               Intent intent = new Intent(loginActivity.this, MainMenuActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.putExtra("current", currentUser.getEmail());
                                 startActivity(intent);
@@ -143,10 +140,10 @@ public class loginActivity extends Activity {
 
             if(currentUser.isEmailVerified()){
 
-                /*Intent intent = new Intent(loginActivity.this,MainMenuActivity.class);
+                Intent intent = new Intent(loginActivity.this, MainMenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("current",currentUser.getEmail());
-                startActivity(intent);*/
+                startActivity(intent);
 
 
             }else{
