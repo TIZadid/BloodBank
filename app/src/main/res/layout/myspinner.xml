@@ -25,6 +25,6 @@
     android:ellipsize="marquee"
     android:fontFamily="@font/desyrel"
     android:singleLine="true"
-    android:textSize="25dp"
+    android:textSize="30dp"
     android:background="@android:color/black"
     android:textColor="@android:color/white" />
