@@ -151,9 +151,9 @@ public class Register extends Activity {
         final String spassword = password.getText().toString().trim();
         final String sfullname = fullname.getText().toString().trim();
         final String bloodgroup ;
-        final String available  ;
+        final String available ;
         final String semail = email.getText().toString().trim();
-        final String sLocation;
+        final String sLocation ;
 
 
         if(bloodspinner.getSelectedItem().toString().equals("none"))bloodgroup = "";
