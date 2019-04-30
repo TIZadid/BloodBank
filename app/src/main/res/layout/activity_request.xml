@@ -88,14 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#c30c0c"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            app:srcCompat="@drawable/next" />
 
         <ImageButton
             android:id="@+id/pause"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#c30c0c"
-            app:srcCompat="@android:drawable/ic_media_pause" />
+            app:srcCompat="@drawable/pause" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
