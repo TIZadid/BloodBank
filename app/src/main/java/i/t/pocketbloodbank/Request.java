@@ -1,5 +1,6 @@
 package i.t.pocketbloodbank;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Request extends AppCompatActivity {
+public class Request extends Activity {
 
     private FirebaseUser currentuser;
     private FirebaseAuth showSingleUserAuth;
@@ -105,7 +106,7 @@ public class Request extends AppCompatActivity {
                 String userkkey = slocation + "&" + sblood;
 
                 donor donor = new donor(sblood,slocation,contact);
-                searchdata.child(userkkey).setValue(donor);
+                searchdata.child(userkkey).child(contact).setValue(contact);
 
             }
         });
