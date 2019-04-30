@@ -56,6 +56,7 @@ public class EditProfile extends Activity {
 
     String dpURL;
     Uri imageURI;
+    String bloodgrp;
 
     Spinner locationspinner;
     User user;
@@ -122,7 +123,7 @@ public class EditProfile extends Activity {
                 editUserName.setText(user.getName());
                 editUserPhoneNumber.setText(user.getPhoneNumber());
               //  editUserLocation.setText(user.getLocation());
-             //   editUserBloodgrp.setText(user.getBloodGrp());
+                bloodgrp = user.getBloodGrp();
              //   editUserAvailabilty.setText(user.getAvailability());
                 dpURL = user.getDpURL();
 
@@ -191,6 +192,7 @@ public class EditProfile extends Activity {
         changedUser.setPhoneNumber(editUserPhoneNumber.getText().toString().trim());
         changedUser.setDpURL(dpURL);
         changedUser.setAvailability(available);
+        changedUser.setBloodGrp(bloodgrp);
 
 
 

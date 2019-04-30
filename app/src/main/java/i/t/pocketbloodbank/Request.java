@@ -2,13 +2,16 @@ package i.t.pocketbloodbank;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -35,10 +38,12 @@ public class Request extends Activity {
     private StorageReference editUserStorageReference;
 
     EditText editPhoneNumber;
-    ImageButton play, pause;
+    Button play, pause;
+    String userkkey;
 
     Spinner locationspinner, bloodspinner;
-
+    donor donorman;
+    String slocation, sblood, contact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,7 @@ public class Request extends Activity {
         databaseReference = FirebaseDatabase.getInstance().getReference("City");
         bloodref = FirebaseDatabase.getInstance().getReference("Blood");
         searchdata = FirebaseDatabase.getInstance().getReference("search");
+
         locationspinner = findViewById(R.id.spinner3);
         bloodspinner = findViewById(R.id.spinner2);
         editPhoneNumber = findViewById(R.id.searchContact);
@@ -93,7 +99,16 @@ public class Request extends Activity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                final String slocation, sblood, contact;
+
+            }
+        });
+        pause.setVisibility(View.GONE);
+
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 if(locationspinner.getSelectedItem().toString().equals("none")) slocation = "";
                 else slocation = locationspinner.getSelectedItem().toString();
 
@@ -102,19 +117,25 @@ public class Request extends Activity {
 
                 contact = editPhoneNumber.getText().toString().trim();
 
+                if(TextUtils.isEmpty(contact)) Toast.makeText(Request.this, "Please fill out all the sections",Toast.LENGTH_LONG).show();
 
-                String userkkey = slocation + "&" + sblood;
+                userkkey = slocation + "&" + sblood;
+                System.out.println(sblood + " " + slocation + " "+ contact);
+                //usekey = slocation+"&"+sblood;
+                //searchdata = FirebaseDatabase.getInstance().getReference(userkkey);
+                donorman = new donor(contact);
 
-                donor donor = new donor(sblood,slocation,contact);
-                searchdata.child(userkkey).child(contact).setValue(contact);
-
+                searchdata.child(userkkey).child(contact).setValue(donorman);
+                //searchdata.child(userkkey).child(contact).setValue(donorman);
+                pause.setVisibility(View.VISIBLE);
+                play.setVisibility(View.GONE);
             }
         });
-
-        play.setOnClickListener(new View.OnClickListener() {
+        pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                play.setVisibility(View.VISIBLE);
+                pause.setVisibility(View.GONE);
             }
         });
 

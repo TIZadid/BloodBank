@@ -81,6 +81,7 @@
             android:fontFamily="@font/desyrel"
             android:hint="+8801XXXXXXXXX"
             android:textAlignment="center"
+            android:inputType="phone"
             android:textColor="@android:color/white"
             android:textSize="30dp" />
 

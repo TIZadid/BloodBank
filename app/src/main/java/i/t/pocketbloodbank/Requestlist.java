@@ -63,8 +63,7 @@ public class Requestlist extends Activity {
 
         mAuth = FirebaseAuth.getInstance();
         userAuthentication = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference("search");
+        myRef = FirebaseDatabase.getInstance().getReference("search");
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
         email = user.getEmail();
@@ -77,9 +76,23 @@ public class Requestlist extends Activity {
 
                 blood = userman.getBloodGrp();
                 location = userman.getLocation();
-                contac = userman.getBloodGrp();
-                userkey = blood + "&" + location;
+                contac = userman.getPhoneNumber();
+                System.out.println(blood + " " + location + " " + contac);
+                userkey = location + "&" + blood;
 
+                myRef.child(userkey).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // This method is called once with the initial value and again
+                        // whenever data at this location is updated.
+                        showData(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
             }
 
@@ -106,20 +119,11 @@ public class Requestlist extends Activity {
                 // ...
             }
         };
-        extraref = myRef.child(userkey);
-        extraref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                showData(dataSnapshot);
-            }
+        //userkey ="search/"+ location + "&" + blood;
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+        //myRef = FirebaseDatabase.getInstance().getReference(userkey);
+//        extraref = myRef.child(userkey).getRef();
 
-            }
-        });
 
 
     }
@@ -132,20 +136,8 @@ public class Requestlist extends Activity {
 
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-            String contact = (String) ds.child("startingdate").getValue();
-            String startingTime = (String) ds.child("startingtime").getValue();
-            String endingDate = (String) ds.child("endingdate").getValue();
-            String endingTime = (String) ds.child("endingtime").getValue();
-            String bestAttacker;
-            String bestDefender;
-            String bestGoalkeeper;
-            String bestMidfielder;
-            String bestPlayer;
-            String eventEmail = (String) ds.child("eventEmail").getValue();
-            String eventLocation;
-            String eventName;
-            String phoneNumber;
-
+            String contact = (String) ds.child("contact").getValue();
+        }
 
             listView = (ListView) findViewById(R.id.listview);
 
@@ -156,15 +148,16 @@ public class Requestlist extends Activity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     //Toast.makeText(OngoingEvents.this, "Hello", Toast.LENGTH_LONG).show();
-
+                    Intent intent = new Intent(Requestlist.this, shownum.class);
+                    intent.putExtra("contact", array.get(position).getContact());
                     //Intent intent = new Intent(MyParticipation.this, EventDetailFull.class);
 
-                    // startActivity(intent);
+                     startActivity(intent);
 
                 }
             });
 
-        }
+
 
     }
 }

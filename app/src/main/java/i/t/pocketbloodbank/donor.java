@@ -10,6 +10,10 @@ class donor {
         this.needlocation = needlocation;
         this.contact = contact;
     }
+    public donor(String contact)
+    {
+        this.contact = contact;
+    }
 
     public String getBloodgroup() {
         return bloodgroup;

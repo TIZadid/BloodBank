@@ -24,14 +24,14 @@ public class MainMenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Searchdonor = findViewById(R.id.EventHostButton);
+        Searchdonor = findViewById(R.id.TeamButton);
         Donorprofile = findViewById(R.id.profileButton);
         Requests = findViewById(R.id.EventHostButton);
 
         Searchdonor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this, Requestlist.class));
+                startActivity(new Intent(MainMenuActivity.this, Request.class));
             }
         });
         Donorprofile.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +43,7 @@ public class MainMenuActivity extends Activity {
         Requests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenuActivity.this,Request.class));
+                startActivity(new Intent(MainMenuActivity.this,Requestlist.class));
             }
         });
 
