@@ -137,6 +137,8 @@ public class Requestlist extends Activity {
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
             String contact = (String) ds.child("contact").getValue();
+            donor don = new donor(contact);
+            array.add(don);
         }
 
             listView = (ListView) findViewById(R.id.listview);

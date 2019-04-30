@@ -136,6 +136,24 @@ public class Request extends Activity {
             public void onClick(View v) {
                 play.setVisibility(View.VISIBLE);
                 pause.setVisibility(View.GONE);
+                if(locationspinner.getSelectedItem().toString().equals("none")) slocation = "";
+                else slocation = locationspinner.getSelectedItem().toString();
+
+                if(bloodspinner.getSelectedItem().toString().equals("none"))sblood = "";
+                else sblood = bloodspinner.getSelectedItem().toString();
+
+                contact = editPhoneNumber.getText().toString().trim();
+
+                if(TextUtils.isEmpty(contact)) Toast.makeText(Request.this, "Please fill out all the sections",Toast.LENGTH_LONG).show();
+
+                userkkey = slocation + "&" + sblood;
+                System.out.println(sblood + " " + slocation + " "+ contact);
+                //usekey = slocation+"&"+sblood;
+                //searchdata = FirebaseDatabase.getInstance().getReference(userkkey);
+                donorman = new donor(contact);
+                searchdata.child(userkkey).child(contact).removeValue();
+
+
             }
         });
 
