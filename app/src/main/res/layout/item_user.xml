@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/airstrikelaser"
+        android:fontFamily="@font/desyrel"
         android:text="TextView"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

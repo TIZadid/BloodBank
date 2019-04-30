@@ -156,7 +156,7 @@
                 android:fontFamily="@font/desyrel"
                 android:gravity="center_vertical"
 
-                android:text="Location:"
+                android:text="Location : "
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -181,7 +181,7 @@
                 android:fontFamily="@font/desyrel"
 
                 android:gravity="center_vertical"
-                android:text="Blood Group :"
+                android:text="Blood Group : "
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
