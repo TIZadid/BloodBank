@@ -2,9 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03382c"
+    android:background="#c30c0c"
     android:orientation="vertical"
     android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/desyrel"
+        android:text="CONTACT TO DONATE YOUR BLOOD AROUND YOUR LOCATION"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
 
     <ListView
         android:id="@+id/listview"
