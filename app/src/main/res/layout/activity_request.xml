@@ -79,23 +79,33 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/desyrel"
+            android:hint="+8801XXXXXXXXX"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="30dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c30c0c"
-            app:srcCompat="@drawable/next" />
+            android:background="@android:color/white"
+            android:textColor="#c30c0c"
+         android:text="START"
+            android:layout_marginBottom="10dp"
+            android:textSize="25dp"
+            android:fontFamily="@font/airstrikelaser"
+         />
 
-        <ImageButton
+        <Button
             android:id="@+id/pause"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#c30c0c"
-            app:srcCompat="@drawable/pause" />
+            android:background="@android:color/white"
+            android:textColor="#c30c0c"
+            android:text="STOP"
+            android:textSize="25dp"
+            android:fontFamily="@font/airstrikelaser"
+            />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
